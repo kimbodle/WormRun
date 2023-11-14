@@ -9,12 +9,13 @@ public class Score_test : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         GetComponent<Text>().text = score.ToString();
+        Debug.Log("텍스트 출력");
     }
 }
