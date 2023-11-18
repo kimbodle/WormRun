@@ -18,6 +18,6 @@ public class Score_test : MonoBehaviour
     void Update()
     {
         GetComponent<TMP_Text>().text = score.ToString();
-        Debug.Log("텍스트 출력");
+       // Debug.Log("텍스트 출력");
     }
 }
