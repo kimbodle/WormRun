@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 78}
+  m_AnchoredPosition: {x: -1.1, y: 41.3}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &10875532
@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f693822351b2baa43b6e340f9f6dcc51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
 --- !u!114 &10875533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,7 +415,7 @@ GameObject:
   - component: {fileID: 457909078}
   m_Layer: 0
   m_Name: enemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -431,6 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3275943812952e040a7863487df3144c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score_Test: {fileID: 10875532}
 --- !u!61 &457909079
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1429,7 +1431,7 @@ GameObject:
   - component: {fileID: 1432667424}
   m_Layer: 0
   m_Name: character_1
-  m_TagString: Untagged
+  m_TagString: Skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1562,7 +1564,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1432667426
 BoxCollider2D:
   m_ObjectHideFlags: 0
