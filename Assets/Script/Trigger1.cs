@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Trigger : MonoBehaviour
+public class Trigger1 : MonoBehaviour
 {
     public Score_test score_Test;
     public float speed = 5f;
@@ -24,10 +24,13 @@ public class Trigger : MonoBehaviour
         Debug.Log("부딫침");
         score_Test.score++;
 
-        if (collision.transform.tag == "Skill")
+        if (collision.transform.tag == "Skill1")
         {
             Destroy(gameObject);
             Debug.Log("스킬 닿음");
+        }
+        else {
+            Debug.Log("맞는 스킬 사용 텍스트 띄우기");
         }
     }
 }
