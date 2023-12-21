@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7339277555404949988}
   - component: {fileID: 6137659725037014141}
-  - component: {fileID: 8300674316524332172}
   - component: {fileID: 1294384671597966926}
   m_Layer: 0
   m_Name: ground_2f_smoll
@@ -86,19 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8300674316524332172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7886463564728153584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f62b4b9a320ae4c8b3de9a795d51cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ground_speed: 5
 --- !u!61 &1294384671597966926
 BoxCollider2D:
   m_ObjectHideFlags: 0

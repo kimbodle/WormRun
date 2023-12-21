@@ -18,8 +18,8 @@ public class Background : MonoBehaviour
         yScreenHalfSize = Camera.main.orthographicSize;
         xScreenHalfSize = yScreenHalfSize * Camera.main.aspect;
 
-        leftPosX = -(xScreenHalfSize * 2);
-        rightPosX = xScreenHalfSize * 2.1f * backgrounds.Length;
+        leftPosX = -(xScreenHalfSize * 2f);
+        rightPosX = xScreenHalfSize * 1.5f * backgrounds.Length;
     }
 
     // Update is called once per frame
