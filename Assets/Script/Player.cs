@@ -43,7 +43,6 @@ public class Player : MonoBehaviour
     private IEnumerator IncreaseSizeOverTime(GameObject skill)
     {
         float duration = 1.5f; // 크기가 증가하는 총 시간
-        float targetScale = -2f; // 목표로 하는 크기
         float elapsedTime = 0f;
 
         Vector3 initialScale = skill.transform.localScale; // 초기 크기

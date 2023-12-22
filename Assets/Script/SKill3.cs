@@ -1,33 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class SKill3 : MonoBehaviour
+public class Skill3 : MonoBehaviour
 {
     private float timer = 0f; // 타이머 변수
     private float destroyDelay = 2f; // 파괴까지의 지연 시간
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.transform.tag == "Enemy3")
-        {
-            Destroy(gameObject);
-        }
-    }
-    private void OnCollisionStay2D(Collision2D collision)
+    /*private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             // Ground 태그를 가진 오브젝트와 충돌 중일 때, 통과하도록 처리
             Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
         }
-    }
-
+    }*/
+  
     // Update is called once per frame
     void Update()
     {

@@ -11,6 +11,9 @@ TagManager:
   - Skill2
   - Obstacle
   - Ground
+  - Skill3
+  - Enemy3
+  - Enemy2
   layers:
   - Default
   - TransparentFX
