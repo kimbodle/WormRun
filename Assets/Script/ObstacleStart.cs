@@ -31,7 +31,7 @@ public class ObstacleStart : MonoBehaviour
         Instantiate(obstacle, spawnPoint.position, spawnPoint.rotation);
     }
     */
-
+  
     public GameObject[] obstacles; // enemy1, enemy2, enemy3 프리팹 배열
     public Transform[] spawnPoints; // 오브젝트 생성 위치 배열
 
