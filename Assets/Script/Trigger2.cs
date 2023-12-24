@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Trigger2 : MonoBehaviour
 {
+    public AudioSource audioSource;
     public Score_test score_Test;
     public float speed = 5f;
     void MoveLeft()
@@ -22,6 +23,7 @@ public class Trigger2 : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("�΋Hħ");
+        audioSource.Play();
 
         if (collision.transform.tag == "Skill2")
         {
