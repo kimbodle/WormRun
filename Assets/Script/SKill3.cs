@@ -8,7 +8,8 @@ public class Skill3 : MonoBehaviour
     private float timer = 0f; // 타이머 변수
     private float destroyDelay = 2f; // 파괴까지의 지연 시간
 
-    /*private void OnCollisionStay2D(Collision2D collision)
+    /*
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {

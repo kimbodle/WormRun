@@ -2,34 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Trigger1 : MonoBehaviour
 {
     public AudioSource audioSource;
-
     public Score_test score_Test;
     public float speed = 5f;
-
-    // UI Text 요소
     public Text infoText;
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-
+        //audioSource = GetComponent<AudioSource>(); 프리베잇으로 할때
         infoText = GameObject.Find("SkillError").GetComponent<Text>();
-        // YourUITextObjectName은 텍스트를 표시할 UI Text 오브젝트의 이름입니다.
     }
+
     void MoveLeft()
     {
-        // 현재 위치를 가져와서 왼쪽으로 이동
         transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
 
     void Update()
     {
-        // 왼쪽으로 이동
         MoveLeft();
+        if(score_Test.score == 10)
+        {
+            SceneManager.LoadScene("GameClear");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,20 +36,33 @@ public class Trigger1 : MonoBehaviour
         Debug.Log("부딫침");
         audioSource.Play();
 
-
         if (collision.transform.tag == "Skill1")
         {
-            Destroy(gameObject);
             Debug.Log("스킬 닿음");
             score_Test.score++;
-
-            // 텍스트 업데이트
-            infoText.text = "승리! 스코어: " + score_Test.score;
+            infoText.text = "스킬 성공! 스코어: " + score_Test.score;
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<Collider2D>().enabled = false;
+            StartCoroutine(WaitAndDestroy(1f));
         }
-        else {
+        else
+        {
             Debug.Log("적에 맞는 스킬을 사용해주세요");
-            // 텍스트 업데이트
             infoText.text = "적에 맞는 스킬을 사용해주세요";
+            StartCoroutine(WaitAndClearText(1f));
         }
+    }
+
+    IEnumerator WaitAndDestroy(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        infoText.text = " ";
+        Destroy(gameObject);
+    }
+
+    IEnumerator WaitAndClearText(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        infoText.text = " ";
     }
 }
