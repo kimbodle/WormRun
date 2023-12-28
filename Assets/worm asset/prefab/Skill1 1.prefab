@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetXCoordinate: 12
+  targetXCoordinate2: 0
 --- !u!58 &3667773881555154710
 CircleCollider2D:
   m_ObjectHideFlags: 0

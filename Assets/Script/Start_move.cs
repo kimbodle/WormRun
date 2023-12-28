@@ -7,7 +7,7 @@ public class Start_move : MonoBehaviour
 {
     public void SceneChange()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Tuto");
     }
 
     public void Scenestart()

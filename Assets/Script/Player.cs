@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,7 +17,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Enemy2")
+        if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag=="Enemy3")
         {
             life--;
             Life.Life_update(life);
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour
     public void Create_skill1()
     {
         // Player 위치에서 공 생성
-        GameObject skill1 = Instantiate(skill1Prefab, transform.position, Quaternion.identity);
+        GameObject skill1 = Instantiate(skill1Prefab, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
         // 공에게 속도 부여
         skill1.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0f);
     }
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour
     public void Create_skill2()
     {
         // Player 위치에서 생성
-        GameObject skill2 = Instantiate(skill2Prefab, transform.position, Quaternion.identity);
+        GameObject skill2 = Instantiate(skill2Prefab, transform.position + new Vector3(0.5f, 0.3f, 0), Quaternion.identity);
         // 공에게 속도 부여
         skill2.GetComponent<Rigidbody2D>().velocity = new Vector2(skill_speed, 0f);
     }
@@ -61,9 +62,9 @@ public class Player : MonoBehaviour
 
     public void Create_skill3()
     {
-        GameObject skill3 = Instantiate(skill3Prefab, transform.position, Quaternion.identity);
+        GameObject skill3 = Instantiate(skill3Prefab, transform.position + new Vector3(1.6f, 1, 0), Quaternion.identity);
 
-        skill3.GetComponent<Rigidbody2D>().velocity = new Vector2(skill_speed, 0f);
+        skill3.GetComponent<Rigidbody2D>().velocity = new Vector2(8, 0f);
         // 프리팹의 크기를 점점 키워주는 코드
         StartCoroutine(IncreaseSizeOverTime(skill3));
     }
@@ -76,9 +77,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (life < 1)
         {
             SceneManager.LoadScene("GameOver");
         }
+        */
     }
 }

@@ -33,13 +33,13 @@ public class Trigger3 : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("부딫침");
-        audioSource.Play();
 
-        if (collision.transform.tag == "Player")
+        if (collision.transform.tag == "Skill3")
         {
             Debug.Log("스킬 닿음");
             score_Test.score++;
             infoText.text = "스킬 성공! 스코어: " + score_Test.score;
+            audioSource.Play();
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Collider2D>().enabled = false;
             StartCoroutine(WaitAndDestroy(1f));
