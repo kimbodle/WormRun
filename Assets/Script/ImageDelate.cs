@@ -6,7 +6,7 @@ using UnityEngine.UI; // UI 컴포넌트를 사용하기 위한 네임스페이스 추가
 public class ImageDelate : MonoBehaviour
 {
     private float timer = 0;
-    public float DelateTime = 12f;
+    public float DelateTime = 10f;
     public Image image; // 투명도를 조절할 이미지
 
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class ImageDelate : MonoBehaviour
         if (timer <= DelateTime)
         {
             Color c = image.color;
-            c.a = 1 - (timer / DelateTime); // 투명도를 서서히 줄임
+            c.a = 1 - (timer / DelateTime - 0.3f); // 투명도를 서서히 줄임
             image.color = c;
         }
         else

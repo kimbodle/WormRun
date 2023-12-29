@@ -15,6 +15,21 @@ public class Player : MonoBehaviour
     public GameObject skill2Prefab;
     public GameObject skill3Prefab;
 
+    public AudioSource trriger;
+
+    private IEnumerator FlashColor(float duration)
+    {
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>(); // SpriteRenderer 컴포넌트 가져오기
+
+        Color originalColor = renderer.color; // 원래 색상 저장
+        Color flashColor = Color.Lerp(originalColor, Color.red, 0.5f); // 원래 색상과 빨간색을 섞음
+        renderer.color = flashColor; // 색상을 약간 빨갛게 변경
+
+        yield return new WaitForSeconds(duration); // 일정 시간 동안 대기
+
+        renderer.color = originalColor; // 색상을 원래대로 돌려놓음
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag=="Enemy3")
@@ -22,7 +37,9 @@ public class Player : MonoBehaviour
             life--;
             Life.Life_update(life);
             Debug.Log(life);
+            trriger.Play();
 
+            StartCoroutine(FlashColor(1f)); // 색상을 0.2초 동안 변경
         }
     }
 
