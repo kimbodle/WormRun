@@ -25,7 +25,7 @@ public class TypingEffect : MonoBehaviour
             yield return new WaitForSeconds(delay);
         }
 
-        yield return new WaitForSeconds(5); // 모든 글자가 출력된 후 5초 대기
+        yield return new WaitForSeconds(3); // 모든 글자가 출력된 후 5초 대기
         SceneManager.LoadScene("SampleScene"); // SampleScene으로 넘어감
     }
 }
